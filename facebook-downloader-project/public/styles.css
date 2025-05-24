@@ -1,0 +1,235 @@
+/* General Body Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background-color: #f0f2f5; /* Light Facebook-like background */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Header Styles */
+header {
+  background-color: #000; /* Black background */
+  color: #fff;
+  padding: 8px 20px; /* Reduced padding for a thinner header */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box; /* Include padding in width */
+}
+
+header h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.download-icon {
+  cursor: pointer;
+  font-size: 22px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 5px; /* Space between icon and status */
+}
+
+#download-status {
+  font-size: 14px;
+  color: #fff;
+  margin-left: 5px;
+}
+
+#download-count {
+  background-color: #e74c3c; /* Red dot for count */
+  color: #fff;
+  font-size: 12px;
+  border-radius: 50%;
+  padding: 2px 6px;
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  display: none; /* Hidden by default */
+}
+
+/* Main Content */
+main {
+  flex-grow: 1; /* Allows main content to take available space */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Input Container */
+.input-container {
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  align-items: center; /* Center items horizontally */
+  gap: 15px; /* Space between input and button */
+  margin-bottom: 30px;
+  width: 100%;
+  max-width: 400px; /* Limit container width */
+}
+
+.input-container input {
+  padding: 12px;
+  font-size: 16px;
+  width: 380px; /* Set input width */
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-sizing: border-box; /* Include padding and border in width */
+}
+
+.input-container button {
+  padding: 12px 25px;
+  font-size: 18px;
+  background-color: #4267b2; /* Facebook Blue */
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  width: auto; /* Adjust button width based on content */
+  min-width: 150px; /* Minimum width for the button */
+}
+
+.input-container button:hover {
+  background-color: #365899; /* Darker blue on hover */
+  transform: translateY(-2px); /* Slight lift on hover */
+}
+
+/* Video Details */
+.video-details {
+  background-color: #fff;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 600px;
+  width: 100%;
+  margin-top: 20px; /* Space from input container */
+  display: flex; /* Ensure display is flex when shown by JS */
+  flex-direction: column;
+  align-items: center;
+  gap: 15px; /* Space between elements */
+}
+
+.video-details h3 {
+  margin: 0 0 10px 0;
+  font-size: 22px;
+  color: #1c1e21;
+}
+
+.video-details p {
+  margin: 0;
+  color: #606770;
+  line-height: 1.5;
+  font-size: 15px;
+}
+
+#quality-selector {
+  padding: 10px 15px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 250px; /* Adjust selector width */
+  cursor: pointer;
+  background-color: #f6f7f9;
+}
+
+#download-button {
+  padding: 12px 30px;
+  font-size: 18px;
+  background-color: #42b72a; /* Green for download */
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-top: 15px; /* Space above download button */
+}
+
+#download-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+  transform: none;
+}
+
+#download-button:hover:not(:disabled) {
+  background-color: #36a420;
+  transform: translateY(-2px);
+}
+
+/* Modal Styles */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1000; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 25px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more specific */
+  max-width: 500px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  position: relative;
+}
+
+.modal-content h2 {
+  margin-top: 0;
+  color: #1c1e21;
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.modal-content ul {
+  list-style: none;
+  padding: 0;
+  max-height: 300px; /* Scrollable history */
+  overflow-y: auto;
+  border: 1px solid #eee;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.modal-content ul li {
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+  color: #333;
+  font-size: 15px;
+}
+
+.modal-content ul li:last-child {
+  border-bottom: none;
+}
+
+.close {
+  color: #aaa;
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
