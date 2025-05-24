@@ -27,19 +27,21 @@ function closeModal() {
 
 // Open Platform Page (Placeholder)
 function openPlatform(platform) {
+  // এখানে প্ল্যাটফর্ম-নির্দিষ্ট পেজে রিডাইরেক্ট করা যাবে
+  // উদাহরণস্বরূপ, URL ইনপুট পেজে যাওয়ার জন্য
   alert(`Clicked on ${platform}. Redirect to URL input page.`);
   // ভবিষ্যতে এখানে নতুন পেজে রিডাইরেক্ট করা যাবে, যেমন:
   // window.location.href = `download.html?platform=${platform}`;
 }
 
-// Update Download Count
+// Update Download Count (Example)
 function updateDownloadCount() {
   const countElement = document.getElementById('download-count');
   countElement.textContent = downloadHistory.length;
   countElement.style.display = downloadHistory.length > 0 ? 'inline' : 'none';
 }
 
-// Simulate Adding to Download History
+// Example: Simulate Adding to Download History
 function addToHistory(platform, url) {
   downloadHistory.push({
     platform,
@@ -51,6 +53,7 @@ function addToHistory(platform, url) {
 
 // Simulate Download (For Testing)
 document.addEventListener('DOMContentLoaded', () => {
+  // Simulate a download for testing
   setTimeout(() => {
     addToHistory('YouTube', 'https://youtube.com/watch?v=example');
   }, 2000); // Add to history after 2 seconds
