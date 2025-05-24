@@ -2,21 +2,41 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <title>HTML</title>
-  
-  <!-- HTML -->
-  
-
-  <!-- Custom Styles -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Video Download</title>
   <link rel="stylesheet" href="style.css">
+  <!-- Font Awesome for Download Icon -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-
 <body>
-  <p>Nothing to see here...</p>
-  <!-- Project -->
+  <!-- Header -->
+  <header>
+    <h1>Video Download</h1>
+    <div class="download-icon" onclick="showDownloadHistory()">
+      <i class="fas fa-download"></i>
+      <span id="download-count" style="display: none;">0</span>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <div class="button-container">
+      <button class="platform-button youtube" onclick="openPlatform('youtube')">YouTube</button>
+      <button class="platform-button facebook" onclick="openPlatform('facebook')">Facebook</button>
+      <button class="platform-button instagram" onclick="openPlatform('instagram')">Instagram</button>
+      <button class="platform-button tiktok" onclick="openPlatform('tiktok')">TikTok</button>
+    </div>
+  </main>
+
+  <!-- Download History Modal -->
+  <div id="history-modal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <h2>Download History</h2>
+      <ul id="download-history"></ul>
+    </div>
+  </div>
+
   <script src="main.js"></script>
 </body>
 </html>
