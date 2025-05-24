@@ -25,6 +25,7 @@ app.post('/download/youtube', async (req, res) => {
 app.post('/download/social', async (req, res) => {
   const { url } = req.body;
   try {
+    // Example: Use a third-party API like SnapSave
     const response = await axios.post('https://snapsave.app/action.php', { url });
     res.json({ downloadUrl: response.data.download_url });
   } catch (error) {
